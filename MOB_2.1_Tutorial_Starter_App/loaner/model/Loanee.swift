@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Loanee: NSObject, NSCoding {
+public class Loanee: NSObject, NSCoding {
     
     
     
@@ -34,12 +34,12 @@ class Loanee: NSObject, NSCoding {
     
     
     
-    func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: "name")
         aCoder.encode(contactNumber, forKey: "contactNumber")
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObject(forKey: "name") as! String
         contactNumber = aDecoder.decodeObject(forKey: "contactNumber") as? String
         super.init()
